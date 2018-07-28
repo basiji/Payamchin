@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.MainActivity">
+
+    <!-- Toolbar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/address_bar"
+        android:orientation="horizontal"
+        android:weightSum="5"
+        android:padding="10dp"
+        android:background="@color/green">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:layout_height="40dp"
+            android:paddingLeft="10dp"
+            android:layout_gravity="center_vertical"
+            android:background="#fff">
+
+            <!-- SSL Lock icon -->
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ssl_lock"
+                android:id="@+id/lock_icon"
+                android:layout_centerVertical="true"/>
+
+            <!-- HTTPS text -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/green"
+                android:layout_toRightOf="@id/lock_icon"
+                android:layout_toEndOf="@id/lock_icon"
+                android:text="https://"
+                android:layout_marginLeft="8dp"
+                android:layout_marginStart="8dp"
+                android:id="@+id/https_text"
+                android:layout_centerVertical="true"/>
+
+            <!-- Address -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/https_text"
+                android:layout_toEndOf="@id/https_text"
+                android:textSize="14sp"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:textColor="#000"
+                android:id="@+id/url_text"
+                android:text="bpm.shaparak.ir"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@id/url_text"
+                android:layout_toEndOf="@id/url_text"
+                android:textSize="14sp"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:id="@+id/domain_text"
+                android:text="/pgwchannel/n"
+
+                />
+
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/bazaar"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Warning bar -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#fb980d"
+        android:id="@+id/warning_bar"
+        android:layout_below="@id/address_bar"
+        android:padding="10dp">
+
+        <!-- Close icon -->
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:tint="#FFF"
+            android:id="@+id/warning_icon"
+            android:layout_centerVertical="true"
+            app:srcCompat="@drawable/ic_close"/>
+
+        <!-- Message -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="#fff"
+            android:id="@+id/warning_text"
+            android:textSize="13sp"
+            android:text="اطلاعات حساب را با ارقام لاتین وارد نمایید."/>
+
+
+    </RelativeLayout>
+
+    <!-- Web View -->
+    <im.delight.android.webview.AdvancedWebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/webView"
+        android:visibility="gone"
+        android:layout_below="@id/warning_bar"
+        xmlns:android="http://schemas.android.com/apk/res/android" />
+
+    <!-- Loading indicator -->
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+</RelativeLayout>

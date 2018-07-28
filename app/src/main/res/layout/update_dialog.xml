@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="240dp"
+    android:background="@color/background">
+
+    <!-- Close icon -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:gravity="right">
+
+        <ImageView
+            android:id="@+id/btn_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_close"
+            android:layout_margin="10dp"
+            android:tint="@color/light_gray"/>
+
+    </LinearLayout>
+
+    <!-- Premium icon -->
+    <ImageView
+        android:layout_width="90dp"
+        android:layout_height="50dp"
+        android:src="@drawable/bazaar_dialog"
+        android:id="@+id/dialog_icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        />
+
+    <!-- Message -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/dialog_icon"
+        android:paddingTop="20dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:textSize="12sp"
+            android:id="@+id/dialog_message"
+            android:text="آپدیت جدید برنامه آماده است."/>
+
+    </LinearLayout>
+
+    <!-- CTA button -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/blue"
+        android:padding="15dp"
+        android:id="@+id/btn_yes"
+        android:gravity="center"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:id="@+id/dialog_download_text"
+            android:text="فعالسازی (ماهیانه ۱۰۰۰ تومان)"/>
+
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>
